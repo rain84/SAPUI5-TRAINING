@@ -1,8 +1,11 @@
 sap.ui.define([
-  'sap/ui/core/mvc/Controller'
+  'sap/ui/core/mvc/Controller',
+  'sap/m/MessageToast'
   ],
 
-  (Controller) => Controller.extend('app.controller.App', {
-    onShowHello() { alert('Hello world!'); }
+  (Controller, MessageToast) => Controller.extend('app.controller.App', {
+    onShowHello() {
+      MessageToast.show('Hello world!');
+    }
   })
 );
