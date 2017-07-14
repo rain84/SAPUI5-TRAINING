@@ -3,8 +3,6 @@ const app = () => {
     .xmlview({ viewName: 'app.view.App' })
     .placeAt('content')
   ;
-
-  // (new sap.m.Text({ text: 'test! test! test! '})).placeAt('content');
 };
 
 
