@@ -5,6 +5,5 @@ const app = () => {
   ;
 };
 
-
 sap.ui.getCore().attachInit(app);
 console.log('app inited');
