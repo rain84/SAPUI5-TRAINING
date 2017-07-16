@@ -1,9 +1,6 @@
-const app = () => {
-  sap.ui
-    .xmlview({ viewName: 'app.view.App' })
-    .placeAt('content')
-  ;
-};
+sap.ui.getCore().attachInit(() => {
+  const container = new sap.ui.core.ComponentContainer({ name: 'app' });
+  container.placeAt('content');
 
-sap.ui.getCore().attachInit(app);
-console.log('app inited');
+  console.log('app inited');
+});
