@@ -6,11 +6,26 @@ sap.ui.define([
   (Controller, MessageToast) =>
     Controller.extend('app.controller.HelloPanel', {
       onShowHello() {
-        var bundle = this.getView().getModel("i18n").getResourceBundle();
-        var recipient = this.getView().getModel().getProperty("/recipient/name");
-        var msg = bundle.getText("helloMsg", [recipient]);
+        const bundle = this.getView().getModel("i18n").getResourceBundle();
+        const recipient = this.getView().getModel().getProperty("/recipient/name");
+        const msg = bundle.getText("helloMsg", [recipient]);
 
         MessageToast.show(msg);
+      },
+
+      onOpenDialog() {
+        const view = this.getView();
+        let dialog = view.byId('HelloDialog');
+
+        console.log('onOpenDialog - 1');
+        if (!dialog) {
+          console.log('onOpenDialog - 2');
+
+          dialog = sap.ui.xmlfragment(view.getId(), 'app.view.HelloDialog');
+          view.addDependent(dialog);
+        }
+
+        dialog.open();
       }
   })
 );
