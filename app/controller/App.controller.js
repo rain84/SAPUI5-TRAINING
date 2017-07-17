@@ -1,16 +1,6 @@
 sap.ui.define([
-  'sap/ui/core/mvc/Controller',
-  'sap/m/MessageToast',
+  'sap/ui/core/mvc/Controller'
   ],
 
-  (Controller, MessageToast) =>
-    Controller.extend('app.controller.App', {
-      onShowHello() {
-        var bundle = this.getView().getModel("i18n").getResourceBundle();
-        var recipient = this.getView().getModel().getProperty("/recipient/name");
-        var msg = bundle.getText("helloMsg", [recipient]);
-
-        MessageToast.show(msg);
-      }
-  })
+  Controller => Controller.extend('app.controller.App', { })
 );
