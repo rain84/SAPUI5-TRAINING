@@ -1,12 +1,11 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
-  "sap/ui/model/json/JSONModel",
-  "sap/ui/model/resource/ResourceModel"
+  "sap/ui/model/json/JSONModel"
 ],
 
-  (UIComponent, JSONModel, ResourceModel) =>
+  (UIComponent, JSONModel) =>
     UIComponent.extend("app.Component", {
-      metadata: {rootView: 'app.view.App'},
+      metadata: {manifest: 'json'},
 
       init() {
         UIComponent.prototype.init.apply(this, arguments);
@@ -14,9 +13,6 @@ sap.ui.define([
         const data = { recipient: { name: 'World' } };
         const model = new JSONModel(data);
         this.setModel(model);
-
-        const i18nModel = new ResourceModel({bundleName: "app.i18n.i18n"});
-        this.setModel(i18nModel, 'i18n');
       }
     })
 );
