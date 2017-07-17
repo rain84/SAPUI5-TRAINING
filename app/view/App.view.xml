@@ -5,7 +5,7 @@
   displayBlock="true"
   >
 
-  <App>
+  <App class="app">
     <pages>
       <Page title="{i18n>homePageTitle}">
         <content>
@@ -18,7 +18,7 @@
               <Button
                 text="{i18n>showHelloButtonText}"
                 press="onShowHello"
-                class="sapUiSmallMarginEnd"
+                class="sapUiSmallMarginEnd myCustomButton"
               />
 
               <Input
@@ -28,7 +28,7 @@
                 width="60%"
               />
 
-              <Text text="Hello {/recipient/name}" class="sapUiSmallMargin"/>
+              <Text text="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
             </content>
           </Panel>
 
