@@ -7,11 +7,15 @@
     text="{i18n>showHelloButtonText}"
     press="onShowHello"
   />
+
   <Input
     value="{/recipient/name}"
     descrition="Hello {/recipient/name}"
     valueLiveUpdate="true"
     width="60%"
   />
+
+  <Text text="{/recipient/name}"/>
+
 </mvc:View>
 
