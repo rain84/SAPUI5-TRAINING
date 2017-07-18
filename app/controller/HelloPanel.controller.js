@@ -17,15 +17,16 @@ sap.ui.define([
         const view = this.getView();
         let dialog = view.byId('HelloDialog');
 
-        console.log('onOpenDialog - 1');
         if (!dialog) {
-          console.log('onOpenDialog - 2');
-
-          dialog = sap.ui.xmlfragment(view.getId(), 'app.view.HelloDialog');
+          dialog = sap.ui.xmlfragment(view.getId(), 'app.view.HelloDialog', this);
           view.addDependent(dialog);
         }
 
         dialog.open();
+      },
+
+      onCloseDialog() {
+        this.getView().byId('HelloDialog').close();
       }
   })
 );
