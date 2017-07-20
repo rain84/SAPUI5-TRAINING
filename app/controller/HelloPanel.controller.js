@@ -5,7 +5,7 @@ sap.ui.define([
 
   (Controller, MessageToast) =>
     Controller.extend('app.controller.HelloPanel', {
-      onShowHello() {
+      onShowHello: function() {
         const bundle = this.getView().getModel("i18n").getResourceBundle();
         const recipient = this.getView().getModel().getProperty("/recipient/name");
         const msg = bundle.getText("helloMsg", [recipient]);
@@ -14,15 +14,7 @@ sap.ui.define([
       },
 
       onOpenDialog() {
-        const view = this.getView();
-        let dialog = view.byId('HelloDialog');
-
-        if (!dialog) {
-          dialog = sap.ui.xmlfragment(view.getId(), 'app.view.HelloDialog', this);
-          view.addDependent(dialog);
-        }
-
-        dialog.open();
+        this.getOwnerComponent().openHelloDialog();
       },
 
       onCloseDialog() {

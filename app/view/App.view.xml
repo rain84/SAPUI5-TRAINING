@@ -8,6 +8,12 @@
   <App class="app">
     <pages>
       <Page title="{i18n>homePageTitle}">
+         <headerContent>
+          <Button
+            icon="sap-icon://hello-world"
+            press="onOpenDialog"
+            />
+        </headerContent>
         <content>
           <mvc:XMLView viewName="app.view.HelloPanel"/>
         </content>
